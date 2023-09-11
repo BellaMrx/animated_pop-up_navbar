@@ -1,0 +1,269 @@
+@charset "UTF-8";
+/* dark mode.css */
+
+:root {
+  --primary-color-1: #333;
+  --primary-color-2: yellow;
+  --primary-color-3: #999;
+  --primary-color-4: #fff;
+  --start-nav-text-shadow: #222;
+  --table-color-1: #222;
+  --table-color-2: #444;
+}
+
+/* ------------------------------------------
+  GENERAL BASIC SETTINGS  
+    (smartphone > 640px)
+-------------------------------------------*/
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primary-color-1);
+    margin: 1em 3rem;
+}
+a:link {
+  color: var(--primary-color-2);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------------------------------
+START PAGE - HEADER
+-------------------------------------------*/
+.header {
+    border-bottom: 1px solid var(--primary-color-2);     /* lightmode ! 2px */
+    padding-bottom: 10px;
+
+    font-size: 26px;
+    color: var(--primary-color-2);
+    text-shadow: 2px 2px 4px var(--start-nav-text-shadow);
+}
+/* ----------------------------------------------
+START PAGE - NAV --> links, darkmode / lightmode
+----------------------------------------------*/
+.nav-gallery {
+    display: grid;
+    place-content: center;
+    margin-top: 3em;
+    --s: 100px;   /* control the size of the images*/
+    grid-template-columns: repeat(3,auto);
+    gap: 5px;
+    position: relative;
+}
+/* start button - close nav */
+.nav-gallery input {
+    z-index: 2;
+    position: absolute;
+    border: 2px solid var(--primary-color-3);    /* lightmode ! 3px */
+    border-radius: 50%;
+    inset: calc(50% - var(--s)/3);  /* size close input button*/
+    cursor: pointer;
+    --g: linear-gradient(var(--primary-color-2) 0 0) no-repeat;     /* color X open nav  */
+    background: var(--g) 50%/var(--b,0%) 3px,var(--g) 50%/3px var(--b,0%);      /* ??? */
+    transition: 1.5s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: 10px 5px 5px black;
+}
+  .nav-gallery input:hover {
+    border: 3px solid var(--primary-color-2);    /* lightmode ! 4px */
+  }
+/* start icon - close nav */
+.nav-gallery .fa-power-off {
+    font-size: 50px;
+    color: var(--primary-color-3);        /* --primary-color-2 ? */
+    margin: 0.15em;       /* position */
+    position: absolute;
+    border-radius: 50%;
+    inset: calc(50% - var(--s)/3);  /* size close input button*/
+    cursor: pointer;
+    --g: linear-gradient(#000 0 0) no-repeat;     /* ??? */
+    background: var(--g) 50%/var(--b,0%) 3px,var(--g) 50%/3px var(--b,0%);      /* ??? */
+    transition: 1.5s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+  /* start input button/checkbox hidden after click -> open-nav */
+  .nav-gallery > input:checked ~ .fa-power-off {
+    color: var(--primary-color-2);
+  }
+.nav-gallery > .nav-link {
+    padding-top: 2em;     /* position links */
+    padding-left: 2em;    /* position links */
+    width: var(--s);
+    aspect-ratio: 1;
+    object-fit: cover;
+    transform: scale(.1);
+    filter: brightness(0);
+    pointer-events: none;
+    transform-origin: var(--x) var(--y);
+    transition: 1s calc((var(--i) - 1)*.1s);
+}
+/* open-nav links */
+.nav-link > a  {
+  visibility: hidden;
+}
+  .nav-gallery > input:checked ~ .nav-link > a {
+    visibility: visible;
+    font-size: 30px;
+    color: var(--primary-color-3); 
+  }
+  .nav-gallery > input:checked ~ .nav-link .fa-power-off {
+    visibility: hidden;
+    font-size: 30px;
+    color: var(--primary-color-2);
+  }
+  .nav-gallery > input:checked ~ .nav-link > a:hover {
+    color: var(--primary-color-2);  
+    text-shadow: 0.3em 0.2em var(--start-nav-text-shadow);
+  }
+/* open-nav dark/light button */
+.nav-link > button {
+  visibility: hidden;
+  background-color: var(--primary-color-1); 
+  border: 1px solid var(--primary-color-1); 
+  border-radius: 100px;
+}
+.nav-gallery > input:checked ~ .nav-link > button   {
+  visibility: visible;
+  font-size: 30px;
+  color: var(--primary-color-3); 
+}
+.nav-gallery > input:checked ~ .nav-link > button:hover {
+  color: var(--primary-color-2); 
+  text-shadow: 0.3em 0.2em var(--start-nav-text-shadow);
+}
+/* open-nav show smooth link after click */
+.nav-gallery > .nav-link:nth-of-type(1) {--i:1;--x: 150%;--y:150%;}
+.nav-gallery > .nav-link:nth-of-type(2) {--i:2;--x:  50%;--y:150%;}
+.nav-gallery > .nav-link:nth-of-type(3) {--i:3;--x: -50%;--y:150%;}
+.nav-gallery > .nav-link:nth-of-type(4) {--i:4;--x: 150%;--y:50%; }
+.nav-gallery > .nav-link:nth-of-type(5) {--i:5 }
+.nav-gallery > .nav-link:nth-of-type(6) {--i:6;--x: -50%;--y:50%; }
+.nav-gallery > .nav-link:nth-of-type(7) {--i:7;--x: 150%;--y:-50%;}
+.nav-gallery > .nav-link:nth-of-type(8) {--i:8;--x:  50%;--y:-50%;}
+.nav-gallery > .nav-link:nth-of-type(9) {--i:9;--x: -50%;--y:-50%;}
+  
+.nav-gallery > input:checked ~ .nav-link {
+    transform: scale(1);
+    filter: brightness(1);
+    pointer-events: initial;
+}
+.nav-gallery > input:checked {
+    border: 2px solid var(--primary-color-2);
+    transform: translateY(calc(1.75*var(--s))) scale(.5) rotate(45deg);
+    --b: 70%;
+}
+
+
+/*-----------------------------------------------------   
+    Tablet version from 640 pixel                          
+    640px / 16px/em = 40em  
+------------------------------------------------------*/
+@media screen and (min-width: 40em) {
+  /* ------------------------------------------
+  HEADER
+  -------------------------------------------*/
+  .header {
+    padding-bottom: 15px;
+    font-size: 28px;
+  }
+  /* ----------------------------------------------
+  START PAGE - NAV --> links, darkmode / lightmode
+  ----------------------------------------------*/
+  .nav-gallery {  
+    --s: 130px; /* control the size of the images*/
+    gap: 20px;
+  }
+  /* start icon - close nav */
+  .nav-gallery .fa-power-off {
+    font-size: 65px;
+    color: var(--primary-color-2);
+    margin: 0.15em;       /* position */
+  }
+  .nav-gallery > input:checked ~ .nav-link > a {
+    font-size: 40px; 
+  }
+  .nav-gallery > input:checked ~ .nav-link > button  {
+    font-size: 40px;
+  }
+}
+
+/*------------------------------------------------------------------
+    Screens from 1024 pixels                         
+    1024px / 16px/em = 64em	
+------------------------------------------------------------------- */
+@media screen and (min-width: 64em) {
+  /* ------------------------------------------
+  HEADER
+  -------------------------------------------*/
+  .header {
+    padding-bottom: 20px;
+    font-size: 30px;
+  }
+  /* ----------------------------------------------
+  START PAGE - NAV --> links, darkmode / lightmode
+  ----------------------------------------------*/
+  .nav-gallery {  
+    --s: 150px; /* control the size of the images*/
+    gap: 20px;
+  }
+  /* start icon - close nav */
+  .nav-gallery .fa-power-off {
+    font-size: 75px;
+    color: var(--primary-color-2);
+    margin: 0.15em;       /* position */
+  }
+  .nav-gallery > input:checked ~ .nav-link > a {
+    font-size: 50px; 
+  }
+  .nav-gallery > input:checked ~ .nav-link > button  {
+    font-size: 50px;
+  }
+}
+
+/*------------------------------------------------------------------- 
+    Large screens (>1600 pixels) 
+    1600px / 16px/em = 100em
+-------------------------------------------------------------------- */
+@media screen and (min-width: 100em) {
+  /* ------------------------------------------
+  HEADER
+  -------------------------------------------*/
+  .header {
+    padding-bottom: 25px;
+    font-size: 32px;
+  }
+  /* ----------------------------------------------
+  START PAGE - NAV --> links, darkmode / lightmode
+  ----------------------------------------------*/
+  .nav-gallery {  
+    --s: 150px; /* control the size of the images*/
+    gap: 20px;
+  }
+  /* start icon - close nav */
+  .nav-gallery .fa-power-off {
+    font-size: 75px;
+    color: var(--primary-color-2);
+    margin: 0.15em;       /* position */
+  }
+  .nav-gallery > input:checked ~ .nav-link > a {
+    font-size: 50px; 
+  }
+  .nav-gallery > input:checked ~ .nav-link > button  {
+    font-size: 50px;
+  }
+}
+
