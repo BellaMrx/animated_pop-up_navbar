@@ -17,3 +17,13 @@ Preview
 
 
 
+ <img src="https://camo.githubusercontent.com/..." data-canonical-src="images/Preview_close.png" width="200" height="400" />
+
+ <img src="https://camo.githubusercontent.com/..." data-canonical-src="images/Preview_open.png" width="200" height="400" />
+
+ <img src="images/Preview_close.png" width="100">
+
+ <img src="images/Preview_open.png" width="100">
+
+
+
