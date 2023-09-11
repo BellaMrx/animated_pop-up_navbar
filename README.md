@@ -5,9 +5,9 @@
 --------------------------------------------------
 Preview
 
- ![Preview](images/Preview_close.png)
+ ![Preview](images/Preview_close.png | width=100)
 
- ![Preview](images/Preview_open.png)
+ ![Preview](images/Preview_open.png | width=100)
 
 -------------------------------------------------
 

@@ -11,6 +11,7 @@
   --table-color-2: #444;
 }
 
+
 /* ------------------------------------------
   GENERAL BASIC SETTINGS  
     (smartphone > 640px)
@@ -41,7 +42,7 @@ a:hover {
 START PAGE - HEADER
 -------------------------------------------*/
 .header {
-    border-bottom: 1px solid var(--primary-color-2);     /* lightmode ! 2px */
+    border-bottom: 1px solid var(--primary-color-2); 
     padding-bottom: 10px;
 
     font-size: 26px;
@@ -64,12 +65,12 @@ START PAGE - NAV --> links, darkmode / lightmode
 .nav-gallery input {
     z-index: 2;
     position: absolute;
-    border: 2px solid var(--primary-color-3);    /* lightmode ! 3px */
+    border: 2px solid var(--primary-color-3); 
     border-radius: 50%;
     inset: calc(50% - var(--s)/3);  /* size close input button*/
     cursor: pointer;
     --g: linear-gradient(var(--primary-color-2) 0 0) no-repeat;     /* color X open nav  */
-    background: var(--g) 50%/var(--b,0%) 3px,var(--g) 50%/3px var(--b,0%);      /* ??? */
+    background: var(--g) 50%/var(--b,0%) 3px,var(--g) 50%/3px var(--b,0%);  
     transition: 1.5s;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -77,19 +78,19 @@ START PAGE - NAV --> links, darkmode / lightmode
     box-shadow: 10px 5px 5px black;
 }
   .nav-gallery input:hover {
-    border: 3px solid var(--primary-color-2);    /* lightmode ! 4px */
+    border: 3px solid var(--primary-color-2);  
   }
 /* start icon - close nav */
 .nav-gallery .fa-power-off {
     font-size: 50px;
-    color: var(--primary-color-3);        /* --primary-color-2 ? */
+    color: var(--primary-color-3);      
     margin: 0.15em;       /* position */
     position: absolute;
     border-radius: 50%;
     inset: calc(50% - var(--s)/3);  /* size close input button*/
     cursor: pointer;
     --g: linear-gradient(#000 0 0) no-repeat;     /* ??? */
-    background: var(--g) 50%/var(--b,0%) 3px,var(--g) 50%/3px var(--b,0%);      /* ??? */
+    background: var(--g) 50%/var(--b,0%) 3px,var(--g) 50%/3px var(--b,0%);     
     transition: 1.5s;
     -webkit-appearance: none;
     -moz-appearance: none;
