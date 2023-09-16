@@ -13,7 +13,7 @@ Without the icons the navbar is not really usable. But the icons can of course a
 
 Preview
 
- <img src="images/Preview_close.png" width="200"> <img src="images/Preview_open.png" width="200">
+ <img src="images/Preview_close.png" width="300"> <img src="images/Preview_open.png" width="300">
 
 
 
